@@ -1,5 +1,7 @@
 ## chouatamar backend
 
+# Users
+
 - http://localhost:5000/api/v1/users (GET)
 - http://localhost:5000/api/v1/users/:id (GET single user)
 - http://localhost:5000/api/v1/users/:id (DELETE )
@@ -42,7 +44,7 @@
 }
 ```
 
-# Shop
+# Shops
 
 - http://localhost:5000/api/v1/shops/create-shop (POST request)
 - http://localhost:5000/api/v1/shops (GET All shops)
