@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 10
+    },
+    "auditLog": "C:\\Users\\th_raju\\raju\\sparktech\\united-anti-waste-app\\my-tem\\logs\\winston\\success\\.2f750e231f15878aca3b5012a1ec82f942087d35-audit.json",
+    "files": [
+        {
+            "date": 1709489430769,
+            "name": "C:\\Users\\th_raju\\raju\\sparktech\\united-anti-waste-app\\my-tem\\logs\\winston\\success\\um-2024-04-03-00-success.log",
+            "hash": "8572c7dbae7b4bb1307d31b2d43b003554eb991b0663402f306f79180e6c48a6"
+        },
+        {
+            "date": 1709492811335,
+            "name": "C:\\Users\\th_raju\\raju\\sparktech\\united-anti-waste-app\\my-tem\\logs\\winston\\success\\um-2024-04-03-01-success.log",
+            "hash": "6290d08955300a5d0b1cc62950e0d28aee272e16e3a30347dda2aded21dd3e32"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,56 @@
+import { User } from './user.model';
+import { IUser } from './user.interface';
+import config from '../../../config';
+import { generateUserId } from './user.utils';
+import ApiError from '../../../errors/ApiError';
+
+const createUser = async (user: IUser): Promise<IUser | null> => {
+  // auto generated incremental id
+  const id = await generateUserId();
+  user.userId = id;
+  // default password
+  if (!user.password) {
+    user.password = config.default_user_pass as string;
+  }
+  const createdUser = await User.create(user);
+  if (!createdUser) {
+    throw new ApiError(400, 'Failed to create user');
+  }
+  return createdUser;
+};
+
+const updateUserFromDB = async (
+  id: string,
+  user: IUser,
+): Promise<IUser | null> => {
+  const updatedUser = await User.findOneAndUpdate({ _id: id }, user, {
+    upsert: true,
+  });
+  if (!updatedUser) {
+    throw new ApiError(400, 'Failed to update user');
+  }
+  return updatedUser;
+};
+
+const getSingleUserFromDB = async (id: string): Promise<IUser | null> => {
+  const user = await User.findOne({ _id: id }).select('-password');
+  if (!user) {
+    throw new ApiError(400, 'Failed to get user');
+  }
+  return user;
+};
+
+const deleteUserFromDB = async (id: string): Promise<IUser | null> => {
+  const deletedUser = await User.findOneAndDelete({ _id: id });
+  if (!deletedUser) {
+    throw new ApiError(400, 'Failed to delete user');
+  }
+  return deletedUser;
+};
+
+export const UserService = {
+  createUser,
+  updateUserFromDB,
+  getSingleUserFromDB,
+  deleteUserFromDB,
+};
