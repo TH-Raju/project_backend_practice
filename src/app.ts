@@ -15,7 +15,7 @@ app.use('/api/v1/', router);
 
 //
 app.get('/', (req, res) => {
-  res.send('Welcome to the THR University Management System');
+  res.send('Welcome to the chouatamar-united-app Management System');
 });
 
 // global error handler
