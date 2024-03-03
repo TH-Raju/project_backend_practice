@@ -24,7 +24,7 @@ const updateUserFromDB = async (
   user: IUser,
 ): Promise<IUser | null> => {
   const updatedUser = await User.findOneAndUpdate({ _id: id }, user, {
-    upsert: true,
+    new: true,
   });
   if (!updatedUser) {
     throw new ApiError(400, 'Failed to update user');

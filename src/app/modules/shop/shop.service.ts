@@ -11,6 +11,29 @@ const createShopToDB = async (shop: IShop): Promise<IShop | null> => {
   return createShop;
 };
 
+const getShopsFromDB = async (): Promise<IShop[] | null> => {
+  const shops = await Shop.find({});
+  if (!shops) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'No shops found');
+  }
+  return shops;
+};
+
+const updateShopFromDB = async (
+  id: string,
+  shop: IShop,
+): Promise<IShop | null> => {
+  const updateShop = await Shop.findByIdAndUpdate({ _id: id }, shop, {
+    new: true,
+  });
+  if (!updateShop) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Shop not found');
+  }
+  return updateShop;
+};
+
 export const ShopService = {
   createShopToDB,
+  getShopsFromDB,
+  updateShopFromDB,
 };
