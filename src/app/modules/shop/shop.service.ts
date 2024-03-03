@@ -32,8 +32,25 @@ const updateShopFromDB = async (
   return updateShop;
 };
 
+const getSingleShopFromDB = async (id: string): Promise<IShop | null> => {
+  const shop = await Shop.findById({ _id: id });
+  if (!shop) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Shop not found');
+  }
+  return shop;
+};
+
+const deleteShopFromDB = async (id: string): Promise<IShop | null> => {
+  const shop = await Shop.findByIdAndDelete({ _id: id });
+  if (!shop) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Shop not found');
+  }
+  return shop;
+};
 export const ShopService = {
   createShopToDB,
   getShopsFromDB,
   updateShopFromDB,
+  getSingleShopFromDB,
+  deleteShopFromDB,
 };

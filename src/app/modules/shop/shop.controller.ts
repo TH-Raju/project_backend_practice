@@ -38,8 +38,32 @@ const updateShop = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getSingleShop = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await ShopService.getSingleShopFromDB(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Shop fetched successfully',
+    data: result,
+  });
+});
+
+const deleteShop = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await ShopService.deleteShopFromDB(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Shop deleted successfully',
+    data: result,
+  });
+});
+
 export const ShopController = {
   createShop,
   getShops,
   updateShop,
+  getSingleShop,
+  deleteShop,
 };

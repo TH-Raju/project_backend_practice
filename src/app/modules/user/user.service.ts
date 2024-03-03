@@ -19,6 +19,14 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
   return createdUser;
 };
 
+const getAllUsersFromDB = async (): Promise<IUser[] | null> => {
+  const users = await User.find({}).lean();
+  if (!users) {
+    throw new ApiError(400, 'Failed to get users');
+  }
+  return users;
+};
+
 const updateUserFromDB = async (
   id: string,
   user: IUser,
@@ -50,6 +58,7 @@ const deleteUserFromDB = async (id: string): Promise<IUser | null> => {
 
 export const UserService = {
   createUser,
+  getAllUsersFromDB,
   updateUserFromDB,
   getSingleUserFromDB,
   deleteUserFromDB,

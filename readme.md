@@ -1,9 +1,10 @@
 ## chouatamar backend
 
+- http://localhost:5000/api/v1/users (GET)
 - http://localhost:5000/api/v1/users/:id (GET single user)
 - http://localhost:5000/api/v1/users/:id (DELETE )
-
 - http://localhost:5000/api/v1/users/create-user (POST)
+- http://localhost:5000/api/v1/users/:id (PATCH)
 
 ```
 {
@@ -45,6 +46,9 @@
 
 - http://localhost:5000/api/v1/shops/create-shop (POST request)
 - http://localhost:5000/api/v1/shops (GET All shops)
+- http://localhost:5000/api/v1/shops/:id (GET single shop)
+- http://localhost:5000/api/v1/shops/:id (PATCH)
+- http://localhost:5000/api/v1/shops/:id (DELETE)
 
 - Demo Data
 
@@ -61,5 +65,15 @@
   "locationLink": "https://maps.example.com/location",
   "about": "This is a sample venue description.",
   "serialNumber": "ABC123456"
+  }
+```
+
+- http://localhost:5000/api/v1/shops/:id (PATCH)
+
+- Demo Data
+
+```
+  {
+  "name": "Tuk Tuk Venue",
   }
 ```
