@@ -15,4 +15,5 @@ export type IShop = {
   about: string;
   serialNumber: string;
 };
+
 export type IShopModel = Model<IShop, Record<string, unknown>>;
