@@ -10,5 +10,10 @@ router.post(
   validateRequest(SurpriseValidation.surpriseZodSchema),
   SurpriseBagController.createSurprise,
 );
+router
+  .get('/', SurpriseBagController.getAllSurprise)
+  .get('/:id', SurpriseBagController.getSingleSurprise)
+  .patch('/:id', SurpriseBagController.updateSurpriseBag)
+  .delete('/:id', SurpriseBagController.deleteSurpriseBag);
 
 export const surpriseBagRoutes = router;

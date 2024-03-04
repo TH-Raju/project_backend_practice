@@ -82,6 +82,10 @@
 
 # Surprise Bag
 
+- http://localhost:5000/api/v1/surprise-bag (GET)
+- http://localhost:5000/api/v1/surprise-bag/:id (GET Single)
+- http://localhost:5000/api/v1/surprise-bag/:id (PATCH)
+- http://localhost:5000/api/v1/surprise-bag/:id (DELETE)
 - http://localhost:5000/api/v1/surprise-bag/create-surprise (POST)
 
 ```
