@@ -2,7 +2,7 @@ import { Model, Types } from 'mongoose';
 
 export type ISurpriseBag = {
   shopId: Types.ObjectId | string;
-  shop_categoryId?: Types.ObjectId | string;
+  shop_categoryId?: Types.ObjectId | string | undefined;
   userId: Types.ObjectId | string;
   name: string;
   bagNo: string;
