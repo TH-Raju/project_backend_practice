@@ -79,3 +79,25 @@
   "name": "Tuk Tuk Venue",
   }
 ```
+
+# Surprise Bag
+
+- http://localhost:5000/api/v1/surprise-bag/create-surprise (POST)
+
+```
+{
+  "shopId": "65e62cdda32048a323f07de8",
+  "userId": "65e4dd3313168d390e8db89d",
+  "name": "Demo Product",
+  "bagNo": "123456",
+  "validation": "2024-03-04T12:00:00Z",
+  "pickUpHour": "14:00 - 16:00",
+  "pricing": "$10.99",
+  "deliveryCharge": "$2.99",
+  "description": "Lorem ipsum dolor sit.",
+  "foodCategory": "Snacks",
+  "orderStatus": "Pending",
+  "qrCode": "https://example.com/qr-code"
+}
+
+```

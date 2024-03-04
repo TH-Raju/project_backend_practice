@@ -8,3 +8,9 @@ export enum ENUM_YN {
   YES = 'yes',
   NO = 'no',
 }
+
+export enum ENUM_FC {
+  BREAKFAST = 'breakfast',
+  LAUNCH = 'launch',
+  DINNER = 'dinner',
+}

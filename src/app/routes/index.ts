@@ -1,6 +1,7 @@
 import express from 'express';
 import { userRoutes } from '../modules/user/user.route';
-import { shopRoutes } from '../modules/shop/shop.route';
+import { shopRoutes } from '../modules/shop_info/shop.route';
+import { surpriseBagRoutes } from '../modules/surprise_bag/surprise.route';
 
 const router = express.Router();
 
@@ -12,6 +13,10 @@ const moduleRoutes = [
   {
     path: '/shops',
     route: shopRoutes,
+  },
+  {
+    path: '/surprise-bag',
+    route: surpriseBagRoutes,
   },
 ];
 
