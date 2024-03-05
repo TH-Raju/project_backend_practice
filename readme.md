@@ -99,7 +99,7 @@
   "pricing": "$10.99",
   "deliveryCharge": "$2.99",
   "description": "Lorem ipsum dolor sit.",
-  "foodCategory": "Snacks",
+  "foodCategory": "breakfast",
   "orderStatus": "Pending",
   "qrCode": "https://example.com/qr-code"
 }
